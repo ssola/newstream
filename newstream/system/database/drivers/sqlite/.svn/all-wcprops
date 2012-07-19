@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/app/!svn/ver/2/trunk/v3vimirk/system/database/drivers/sqlite
+END
+sqlite_utility.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/app/!svn/ver/2/trunk/v3vimirk/system/database/drivers/sqlite/sqlite_utility.php
+END
+sqlite_driver.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/app/!svn/ver/2/trunk/v3vimirk/system/database/drivers/sqlite/sqlite_driver.php
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/app/!svn/ver/2/trunk/v3vimirk/system/database/drivers/sqlite/index.html
+END
+sqlite_result.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/app/!svn/ver/2/trunk/v3vimirk/system/database/drivers/sqlite/sqlite_result.php
+END
+sqlite_forge.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/app/!svn/ver/2/trunk/v3vimirk/system/database/drivers/sqlite/sqlite_forge.php
+END

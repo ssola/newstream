@@ -1,0 +1,81 @@
+<?php
+class Indexer extends CI_Controller {
+	private $feeds = array(
+		"http://feeds.nytimes.com/nyt/rss/World" => array("provider" => "The New York Times", "language" => "English"),
+		"http://feeds.nytimes.com/nyt/rss/US" => array("provider" => "The New York Times", "language" => "English"),
+		"http://feeds.nytimes.com/nyt/rss/Business" => array("provider" => "The New York Times", "language" => "English"),
+		"http://feeds.nytimes.com/nyt/rss/Technology" => array("provider" => "The New York Times", "language" => "English"),
+		"http://feeds1.nytimes.com/nyt/rss/Sports"=> array("provider" => "The New York Times", "language" => "English"),
+		"http://feeds.nytimes.com/nyt/rss/Science"=> array("provider" => "The New York Times", "language" => "English"),
+		"http://feeds.bbci.co.uk/news/rss.xml"=> array("provider" => "BBC", "language" => "English"),
+		"http://feeds.washingtonpost.com/rss/world" => array("provider" => "Washington Post", "language" => "English"),
+		"http://feeds.foxnews.com/foxnews/world" => array("provider" => "Fox News", "language" => "English"),
+		"http://feeds.cbsnews.com/CBSNewsMain?tag=contentMain%3bcontentBody" => array("provider" => "CBS News", "language" => "English"),
+		"http://feeds.washingtonpost.com/rss/politics" => array("provider"=>"Washington Post", "language" => "English"),
+		"http://techcrunch.com/feed/" => array("provider" => "Techcrunch", "language" => "English"),
+		"http://rss.lemonde.fr/c/205/f/3050/index.rss" => array("provider" => "LeMonde", "language" => "French"),
+		"http://mashable.com/feed/" => array("provider" => "Mashable", "language" => "English"),
+		"http://rss.cnn.com/rss/edition_world.rss" => array("provider" => "CNN", "language" => "English"),
+		"http://rss.cnn.com/rss/edition_technology.rss" => array("provider" => "CNN", "language" => "English"),
+		"http://thenextweb.com/feed/" => array("provider" => "The Next Web", "language" => "English"),
+		"http://www.dn.se/nyheter/m/rss/senaste-nytt" => array("provider" => "DN.se", "language" => "Swedish"),
+		"http://www.newyorker.com/services/mrss/feeds/everything.xml" => array("provider" => "New Yorker", "language" => "English"),
+		"http://rss.lefigaro.fr/lefigaro/laune" => array("provider" => "Le Figaro", "language" => "French")
+	);
+	private $verbose = true;
+	
+	public function __construct() {
+		parent::__construct();
+	}	
+	
+	public function start() {
+		if ( $this->input->is_cli_request() ) {
+			$this->p("Starting to crawl: ");
+			if ( $this->feeds ) {
+				foreach ( $this->feeds as $feed => $value) {
+					$this->p("Checking: $feed");
+					$buffer = file_get_contents($feed);
+					if ( !empty ( $buffer ) ) {
+						$array = (array)simplexml_load_string($buffer);
+						$items = $array['channel'];
+
+						if ( $items ) {
+							$this->load->model('News_model');
+							foreach ( $items as $item ) {
+								if ( $item->link ) {
+									if ( !$this->News_model->itemExists((string)$item->link) ) {
+										$this->p("Item doesn't exists");
+										$data = array(
+											"title" => (string)$item->title,
+											"url" => (string)$item->link,
+											"description" => strip_tags((string)$item->description),
+											"keywords" => $this->split($item->title),
+											"date" => time(),
+											"provider" => $value['provider'],
+											"language" => $value['language']
+										);
+										
+										if ( $this->News_model->saveItem($data) ) {
+											$this->p("Article {$data['title']}Êhas been recorded");
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	private function split($sentence) {
+		return preg_split('/([\s\-_,:;?!\/\(\)\[\]{}<>\r\n"]|(?<!\d)\.(?!\d))/',
+                    $sentence, null, PREG_SPLIT_NO_EMPTY);
+	}
+	
+	private function p($message) {
+		if ( $this->verbose ) {
+			echo $message."\r\n";
+		}
+	}	
+}

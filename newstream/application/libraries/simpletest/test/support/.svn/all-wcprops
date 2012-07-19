@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/simpletest/test/support
+END
+empty_test_file.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/simpletest/test/support/empty_test_file.php
+END
+spl_examples.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/simpletest/test/support/spl_examples.php
+END
+recorder_sample.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/simpletest/test/support/recorder_sample.php
+END
+failing_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/simpletest/test/support/failing_test.php
+END
+test1.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/simpletest/test/support/test1.php
+END
+passing_test.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/simpletest/test/support/passing_test.php
+END
+supplementary_upload_sample.txt
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/simpletest/test/support/supplementary_upload_sample.txt
+END
+upload_sample.txt
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/simpletest/test/support/upload_sample.txt
+END
+latin1_sample
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/simpletest/test/support/latin1_sample
+END

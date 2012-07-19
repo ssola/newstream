@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries
+END
+Format.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/Format.php
+END
+REST_Controller.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/REST_Controller.php
+END
+Mongo_db.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/Mongo_db.php
+END
+fb_ca_chain_bundle.crt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/fb_ca_chain_bundle.crt
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/index.html
+END
+queue_manager.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/queue_manager.php
+END
+Google_oauth.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/Google_oauth.php
+END
+simpletester.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/simpletester.php
+END
+Youtube.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/app/!svn/ver/2/trunk/v3vimirk/application/libraries/Youtube.php
+END

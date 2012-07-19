@@ -1,0 +1,107 @@
+/**
+ * Real Time news server
+ */
+var app = require('express').createServer();
+var io = require('socket.io').listen(app,{ log: false });
+var mongoose = require("mongoose")
+,Schema = mongoose.Schema;
+
+mongoose.connect('mongodb://localhost/newstream');
+
+var ArticleItem = new Schema({
+	title		:String,
+	description	:String,
+	url			:String,
+	keywords	:Array,
+	date		:Number,
+	provider	:String
+});
+
+var News = mongoose.model('news', ArticleItem);
+
+app.listen(8080);
+
+app.get("/", function(req, res){
+	res.sendfile(__dirname+'index.html');
+});
+
+var returnedData = false;
+var clients = {};
+var articles = [];
+var viewedArticles = [];
+
+io.sockets.on('connection', function(socket) {
+	console.log("New user has been connected");
+	
+	if ( clients[socket.id] == undefined ) {
+		clients[socket.id] = socket;
+		clients[socket.id]['articles'] = [];
+		var timestamp = new Date().getTime();
+		var currentTime = Math.round((new Date()).getTime() / 1000)-600;
+		console.log(currentTime );
+		var stream = News.find({date:{'$gt':currentTime}}).tailable().stream();
+		stream.on('data', function(data) {
+			clients[socket.id]['articles'].push(data);
+			socket.emit('newArticle');
+		});
+		
+		stream.on('error', function(err) {
+			console.log(err);
+		});
+	}
+
+	socket.on('sendMeArticles', function() {
+		socket.emit('getArticles', clients[socket.id]['articles']);
+		clients[socket.id]['articles'] = [];
+	});
+	
+	/*if ( clients[socket.id].start == false ) {
+		var latestArticles = News.find().sort('date',-1).limit(2);
+		latestArticles.execFind(function(err, articles ) {
+			if ( articles ) {
+				articles.forEach(function(item){
+					//console.log("New item "+item.title+" for: " + socket.id);
+					socket.emit("newArticle", item);
+				});
+				
+				clients[socket.id].start = true;
+				if (clients[socket.id].start == true) {
+					clients[socket.id].stream = News.find().tailable().stream();
+					console.log("CUrsor: " + clients[socket.id].stream._cursor);
+					clients[socket.id].stream._cursor = latestArticles;
+					clients[socket.id].stream.on('data', function(doc){
+						socket.emit("newArticle", doc);
+					});
+				}
+			}
+		});		
+		
+		console.log(clients[socket.id].stream);
+	}*/
+	
+	/*var stream = News.find().tailable().stream();
+
+	stream.on('error', function (err) {
+	  console.error(err)
+	});
+
+	stream.on('data', function (doc) {
+		if( returnedData == false) {
+			console.log("NOt logged");
+			this.pause();
+			var latestArticles = News.find().sort('date',-1).limit(1);
+			var self = this;
+			latestArticles.execFind(function(err, articles ) {
+				if ( articles ) {
+					articles.forEach(function(item){
+						//socket.emit("newArticle", item);
+					});
+					self.resume();
+				}
+			});
+			returnedData = true;
+		} else {
+			//socket.emit("newArticle", doc);
+		}
+	});	*/
+});

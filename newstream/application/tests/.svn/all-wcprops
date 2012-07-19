@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/app/!svn/ver/2/trunk/v3vimirk/application/tests
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/app/!svn/ver/2/trunk/v3vimirk/application/tests/index.html
+END
+test_authentication.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/app/!svn/ver/2/trunk/v3vimirk/application/tests/test_authentication.php
+END

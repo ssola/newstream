@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/app/!svn/ver/2/trunk/v3vimirk/application/config
+END
+api_auth_conf.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/app/!svn/ver/2/trunk/v3vimirk/application/config/api_auth_conf.php
+END
+database.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/app/!svn/ver/2/trunk/v3vimirk/application/config/database.php
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/app/!svn/ver/2/trunk/v3vimirk/application/config/index.html
+END
+mimes.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/app/!svn/ver/2/trunk/v3vimirk/application/config/mimes.php
+END
+doctypes.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/app/!svn/ver/2/trunk/v3vimirk/application/config/doctypes.php
+END
+config.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/app/!svn/ver/2/trunk/v3vimirk/application/config/config.php
+END
+smileys.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/app/!svn/ver/2/trunk/v3vimirk/application/config/smileys.php
+END
+user_agents.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/app/!svn/ver/2/trunk/v3vimirk/application/config/user_agents.php
+END
+profiler.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/app/!svn/ver/2/trunk/v3vimirk/application/config/profiler.php
+END
+videos_config.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/app/!svn/ver/2/trunk/v3vimirk/application/config/videos_config.php
+END
+routes.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/app/!svn/ver/2/trunk/v3vimirk/application/config/routes.php
+END
+constants.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/app/!svn/ver/2/trunk/v3vimirk/application/config/constants.php
+END
+hooks.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/app/!svn/ver/2/trunk/v3vimirk/application/config/hooks.php
+END
+simpletester.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/app/!svn/ver/2/trunk/v3vimirk/application/config/simpletester.php
+END
+foreign_chars.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/app/!svn/ver/2/trunk/v3vimirk/application/config/foreign_chars.php
+END
+mongodb.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/app/!svn/ver/2/trunk/v3vimirk/application/config/mongodb.php
+END
+rest.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/app/!svn/ver/2/trunk/v3vimirk/application/config/rest.php
+END
+autoload.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/app/!svn/ver/2/trunk/v3vimirk/application/config/autoload.php
+END
